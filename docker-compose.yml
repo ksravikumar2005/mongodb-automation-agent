@@ -1,0 +1,16 @@
+version: '2'
+services:
+   node1:
+    build: ./automation-agent
+    ports:
+      - 11117:27000
+    volumes:
+      - ./automation-agent-data/db:/data/db
+    networks:
+      - mongodb
+    command: --mmsBaseUrl=http://url-of-your-ops-manager --mmsGroupId=  --mmsApiKey=
+volumes:
+   automation-agent_datadb:
+networks:
+  mongodb:
+
